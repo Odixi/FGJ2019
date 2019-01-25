@@ -23,6 +23,9 @@ ModelImporter:
     100034: Handle
     100036: Main
     100038: Split
+    100040: Cylinder_009
+    100042: Plane_001
+    100044: Room
     400000: BezierCurve
     400002: Cube
     400004: Cube_001
@@ -43,6 +46,9 @@ ModelImporter:
     400034: Handle
     400036: Main
     400038: Split
+    400040: Cylinder_009
+    400042: Plane_001
+    400044: Room
     2100000: Carpet
     2100002: Door_Knob
     2100004: Door
@@ -51,6 +57,8 @@ ModelImporter:
     2100010: Floor
     2100012: Wall
     2100014: Darkness
+    2100016: Roof_lamp
+    2100018: Roof_lamp_dome
     2300000: BezierCurve
     2300002: Cube
     2300004: Cube_001
@@ -66,6 +74,9 @@ ModelImporter:
     2300024: Cylinder_007
     2300026: Cylinder_008
     2300028: Plane
+    2300030: Cylinder_009
+    2300032: Plane_001
+    2300034: Room
     3300000: BezierCurve
     3300002: Cube
     3300004: Cube_001
@@ -81,6 +92,9 @@ ModelImporter:
     3300024: Cylinder_007
     3300026: Cylinder_008
     3300028: Plane
+    3300030: Cylinder_009
+    3300032: Plane_001
+    3300034: Room
     4300000: Cube_003
     4300002: Cylinder_008
     4300004: Cube_002
@@ -96,6 +110,9 @@ ModelImporter:
     4300024: Cylinder
     4300026: Cube
     4300028: Plane
+    4300030: Cylinder_009
+    4300032: Plane_001
+    4300034: Room
     7400000: Default Take
     7400002: ArmatureAction
     7400004: Open_Door
