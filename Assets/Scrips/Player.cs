@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     private float rotationInterpolationMultipler = 0.1f;
     [SerializeField]
     private float cameraInterpolationMultipler = 0.1f;
+    [SerializeField]
+    private float cameraHeightInterpolationMultipler = 0.1f;
+
+
+    Animator animator;
 
     private Vector3 moveVec = Vector3.zero;
 
@@ -38,6 +43,7 @@ public class Player : MonoBehaviour
         cc = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -45,22 +51,27 @@ public class Player : MonoBehaviour
         var hor = Input.GetAxis("Horizontal");
         var ver = Input.GetAxis("Vertical");
         var ms = Mathf.Clamp(Mathf.Abs(hor) + Mathf.Abs(ver), 0, moveSpeed);
+        moveVec.x = 0;
+        moveVec.z = 0;
         moveVec.y -= gravity * Time.fixedDeltaTime;
         if (hor != 0 || ver != 0)
         {
             var dir = camera.transform.TransformDirection(new Vector3(hor, 0, ver));
             dir.y = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotationInterpolationMultipler);
             moveVec = transform.TransformDirection(new Vector3(0, moveVec.y, ms));
         }
         if (cc.isGrounded)
         {
+            animator.SetBool("Jumping", false);
             moveVec.y = 0;
             if (Input.GetButton("Jump"))
             {
+                animator.SetBool("Jumping", true);
                 moveVec.y = jumpSpeed;
             }
         }
+        animator.SetFloat("Speed", ms / moveSpeed);
         cc.Move(moveVec);
 
     }
@@ -72,17 +83,17 @@ public class Player : MonoBehaviour
 
         camera.transform.RotateAround(transform.position, Vector3.up, mh * cameraSens);
         camera.transform.RotateAround(transform.position, camera.transform.right, mv * cameraSens);
-
-        if (Vector3.SqrMagnitude(transform.position - camera.transform.position) > cameraTargetDist + cameraTargetDistErr)
+        var sqrDist = Vector3.SqrMagnitude(transform.position - camera.transform.position);
+        if (sqrDist > cameraTargetDist + cameraTargetDistErr)
         {
-            camera.transform.position = Vector3.Slerp(camera.transform.position, transform.position, cameraInterpolationMultipler);
+            camera.transform.position = Vector3.Slerp(camera.transform.position, transform.position, cameraInterpolationMultipler * sqrDist);
         }
-        else if (Vector3.SqrMagnitude(transform.position - camera.transform.position) < cameraTargetDist - cameraTargetDistErr)
+        else if (sqrDist < cameraTargetDist - cameraTargetDistErr)
         {
             camera.transform.position -= (transform.position - camera.transform.position).normalized * cameraBackwarsMoveStep;
         }
 
-        camera.transform.position = new Vector3(camera.transform.position.x, Mathf.Lerp(camera.transform.position.y, transform.position.y + cameraTragetHeight, cameraInterpolationMultipler) ,camera.transform.position.z);
+        camera.transform.position = new Vector3(camera.transform.position.x, Mathf.Lerp(camera.transform.position.y, transform.position.y + cameraTragetHeight, cameraHeightInterpolationMultipler) ,camera.transform.position.z);
 
         camera.transform.LookAt(transform);
 
