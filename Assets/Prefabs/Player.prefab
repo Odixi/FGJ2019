@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5548493857611070432}
   - component: {fileID: 5548493857611070434}
-  - component: {fileID: 5548493857611070437}
-  - component: {fileID: 5548493857611070436}
   - component: {fileID: 5548493857611070433}
   m_Layer: 0
   m_Name: Player
@@ -29,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5548493857611070427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4293412, y: 3.96, z: -1.6663326}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 6311785375907917948}
   m_Father: {fileID: 0}
@@ -47,45 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9327ee61a5b5f1240a084d6f258c56e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTargetDist: 16
-  cameraTargetDistErr: 4
-  cameraBackwarsMoveStep: 0.1
-  cameraTragetHeight: 1
+  cameraTargetDist: 0.7
+  cameraTargetDistErr: 0.2
+  cameraBackwarsMoveStep: 0.01
+  cameraTragetHeight: 3
   cameraSens: 2
-  gravity: 1
-  jumpSpeed: 0.4
-  moveSpeed: 0.2
-  rotationInterpolationMultipler: 0.1
-  cameraInterpolationMultipler: 0.03
---- !u!65 &5548493857611070437
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548493857611070427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5548493857611070436
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548493857611070427}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  gravity: 0.1
+  jumpSpeed: 0.04
+  moveSpeed: 0.01
+  rotationInterpolationMultipler: 0.2
+  cameraInterpolationMultipler: 0.004
+  cameraHeightInterpolationMultipler: 0.1
 --- !u!143 &5548493857611070433
 CharacterController:
   m_ObjectHideFlags: 0
@@ -97,13 +67,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
+  m_Height: 2.1
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_StepOffset: 0.03
+  m_SkinWidth: 0.008
+  m_MinMoveDistance: 0.0001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &6311785375907523286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,7 +103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_LocalRotation.z
@@ -141,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_RootOrder
@@ -153,12 +123,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 12da2c3cf49aadd41871d3e44f78721f, type: 2}
     - target: {fileID: 13700000, guid: 420bb9a5161785742bf3780c2eedabfc, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 

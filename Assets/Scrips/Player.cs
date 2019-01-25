@@ -93,9 +93,9 @@ public class Player : MonoBehaviour
             camera.transform.position -= (transform.position - camera.transform.position).normalized * cameraBackwarsMoveStep;
         }
 
-        camera.transform.position = new Vector3(camera.transform.position.x, Mathf.Lerp(camera.transform.position.y, transform.position.y + cameraTragetHeight, cameraHeightInterpolationMultipler) ,camera.transform.position.z);
+        //camera.transform.position = new Vector3(camera.transform.position.x, Mathf.Lerp(camera.transform.position.y, transform.position.y + cameraTragetHeight, cameraHeightInterpolationMultipler) ,camera.transform.position.z);
 
-        camera.transform.LookAt(transform);
+        camera.transform.LookAt(transform.position + Vector3.up * 0.1f);
 
 
 
