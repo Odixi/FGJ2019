@@ -19,6 +19,10 @@ ModelImporter:
     100026: Cylinder_008
     100028: //RootNode
     100030: Plane
+    100032: Armature
+    100034: Handle
+    100036: Main
+    100038: Split
     400000: BezierCurve
     400002: Cube
     400004: Cube_001
@@ -35,6 +39,10 @@ ModelImporter:
     400026: Cylinder_008
     400028: //RootNode
     400030: Plane
+    400032: Armature
+    400034: Handle
+    400036: Main
+    400038: Split
     2100000: Carpet
     2100002: Door_Knob
     2100004: Door
@@ -42,6 +50,7 @@ ModelImporter:
     2100008: Radiator_Knob
     2100010: Floor
     2100012: Wall
+    2100014: Darkness
     2300000: BezierCurve
     2300002: Cube
     2300004: Cube_001
@@ -88,7 +97,12 @@ ModelImporter:
     4300026: Cube
     4300028: Plane
     7400000: Default Take
+    7400002: ArmatureAction
+    7400004: Open_Door
     9500000: //RootNode
+    13700000: Cube_001
+    13700002: Cylinder_004
+    13700004: Cylinder_005
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
