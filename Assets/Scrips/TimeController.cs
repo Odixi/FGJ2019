@@ -50,13 +50,13 @@ public class TimeController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0.01f)
         {
             PbSpeed += 0.1f;
-            timeValueText.text = PbSpeed.ToString();
+            timeValueText.text = PbSpeed.ToString("0.00");
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < -0.01f)
+        if (Input.GetAxis("Mouse ScrollWheel") < -0.015f)
         {
-            PbSpeed -= PbSpeed <= 0.1f ? 0 : 0.1f;
-            timeValueText.text = PbSpeed.ToString();
+            PbSpeed -= PbSpeed <= 0.15f ? 0 : 0.1f;
+            timeValueText.text = PbSpeed.ToString("0.00");
         }
 
         // Time Inputs
