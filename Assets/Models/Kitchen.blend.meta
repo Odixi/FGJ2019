@@ -39,6 +39,7 @@ ModelImporter:
     100066: Rear_Left
     100068: Rear_Right
     100070: Sphere
+    100072: Cube_019
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -75,6 +76,7 @@ ModelImporter:
     400066: Rear_Left
     400068: Rear_Right
     400070: Sphere
+    400072: Cube_019
     2100000: unnamed
     2100002: Bookshelf
     2100004: Table
@@ -96,6 +98,8 @@ ModelImporter:
     2100036: Glass
     2100038: Plate_Edge
     2100040: Exit
+    2100042: Lamp
+    2100044: Lamp_Light
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -124,6 +128,7 @@ ModelImporter:
     2300050: Cylinder_004
     2300052: Cylinder_006
     2300054: Sphere
+    2300056: Cube_019
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -152,6 +157,7 @@ ModelImporter:
     3300050: Cylinder_004
     3300052: Cylinder_006
     3300054: Sphere
+    3300056: Cube_019
     4300000: Cylinder_001
     4300002: Cylinder
     4300004: Cube_008
@@ -181,8 +187,10 @@ ModelImporter:
     4300052: Cylinder_004
     4300054: Cylinder_003
     4300056: Cube_013
+    4300058: Cube_019
     7400000: Default Take
     7400002: ArmatureAction
+    7400004: ArmatureAction_001
     9500000: //RootNode
     13700000: Cube_018
   externalObjects: {}
