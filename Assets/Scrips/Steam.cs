@@ -20,7 +20,6 @@ public class Steam : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print("Trigger Entered");
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * force);
