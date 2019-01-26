@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     private Camera camera;
     private Rigidbody rigidbody;
     private CapsuleCollider collider;
@@ -93,7 +94,6 @@ public class Player : MonoBehaviour
         {
             Ride();
         }
-        print(rigidbody.velocity.sqrMagnitude);
         animator.SetFloat("Speed", 1.7f*rigidbody.velocity.sqrMagnitude / moveSpeed);
         var zm = Mathf.Max( moveAcc*(moveSpeed - rigidbody.velocity.sqrMagnitude), 0);
         moveVec = transform.TransformDirection(new Vector3(0, 0, ms*zm));
@@ -107,7 +107,6 @@ public class Player : MonoBehaviour
         newPos.y = transform.position.y;
         if (mountLastPosition != null)
         {
-            print("mount moved to " + (mount.transform.position - (Vector3)mountLastPosition));
             transform.position += mount.transform.position - (Vector3)mountLastPosition;
         }
         mountLastPosition = mount.transform.position;

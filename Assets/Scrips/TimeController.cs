@@ -36,6 +36,8 @@ public class TimeController : MonoBehaviour
     private void Update()
     {
         CurrentTime = animators[0].GetCurrentAnimatorStateInfo(0).normalizedTime;
+        var curSpeed = animators[0].GetCurrentAnimatorStateInfo(0).speedMultiplier;
+        print(curSpeed);
 
         if ((CurrentTime >= MaxTime && Speed > 0) || (CurrentTime <= MinTime && Speed < 0))
         {
@@ -51,12 +53,23 @@ public class TimeController : MonoBehaviour
         {
             PbSpeed += 0.1f;
             timeValueText.text = PbSpeed.ToString("0.00");
+            if (curSpeed != 0)
+            {
+                var s = curSpeed > 0 ? 1 : -1;
+                TimeController.Instance.Play(s * PbSpeed);
+            }
+
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < -0.015f)
         {
             PbSpeed -= PbSpeed <= 0.15f ? 0 : 0.1f;
             timeValueText.text = PbSpeed.ToString("0.00");
+            if (curSpeed != 0)
+            {
+                var s = curSpeed > 0 ? 1 : -1;
+                TimeController.Instance.Play(s * PbSpeed);
+            }
         }
 
         // Time Inputs

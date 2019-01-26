@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 3f4c9416422c5b542ae748d2a772a4b4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Fan
+    100002: HH
+    100004: Hiiri
+    100006: Huone
+    100008: Imuri
+    100010: Kaukos
+    100012: Keyboard
+    100014: Nautto
+    100016: oikeaOvi
+    100018: //RootNode
+    100020: Poyta
+    100022: Sohva
+    100024: TelkkariPouta
+    100026: Telkku
+    100028: TKPoyta
+    100030: Tuoli
+    100032: Vasemovi
+    400000: Fan
+    400002: HH
+    400004: Hiiri
+    400006: Huone
+    400008: Imuri
+    400010: Kaukos
+    400012: Keyboard
+    400014: Nautto
+    400016: oikeaOvi
+    400018: //RootNode
+    400020: Poyta
+    400022: Sohva
+    400024: TelkkariPouta
+    400026: Telkku
+    400028: TKPoyta
+    400030: Tuoli
+    400032: Vasemovi
+    2100000: unnamed
+    2100002: Telkkari
+    2100004: Lamppu
+    2100006: Ruutu
+    2100008: Sohva
+    2100010: Sohvan_jalka
+    2100012: Lattia
+    2100014: Sein_t
+    2100016: Ovi
+    2100018: Kahva
+    2100020: Ikkuna
+    2300000: Fan
+    2300002: HH
+    2300004: Hiiri
+    2300006: Huone
+    2300008: Imuri
+    2300010: Kaukos
+    2300012: Keyboard
+    2300014: Nautto
+    2300016: oikeaOvi
+    2300018: Poyta
+    2300020: Sohva
+    2300022: TelkkariPouta
+    2300024: Telkku
+    2300026: TKPoyta
+    2300028: Tuoli
+    2300030: Vasemovi
+    3300000: Fan
+    3300002: HH
+    3300004: Hiiri
+    3300006: Huone
+    3300008: Imuri
+    3300010: Kaukos
+    3300012: Keyboard
+    3300014: Nautto
+    3300016: oikeaOvi
+    3300018: Poyta
+    3300020: Sohva
+    3300022: TelkkariPouta
+    3300024: Telkku
+    3300026: TKPoyta
+    3300028: Tuoli
+    3300030: Vasemovi
+    4300000: HH
+    4300002: Imuri
+    4300004: Kaukos
+    4300006: Fan
+    4300008: Tuoli
+    4300010: Hiiri
+    4300012: Keyboard
+    4300014: Nautto
+    4300016: TKPoyta
+    4300018: Telkku
+    4300020: Vasemovi
+    4300022: oikeaOvi
+    4300024: TelkkariPouta
+    4300026: Poyta
+    4300028: Sohva
+    4300030: Huone
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
