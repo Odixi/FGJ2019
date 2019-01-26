@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
     [SerializeField]
+    private float moveAcc;
+    [SerializeField]
     private float rotationInterpolationMultipler = 0.1f;
     [SerializeField]
     private float cameraInterpolationMultipler = 0.1f;
@@ -75,7 +77,6 @@ public class Player : MonoBehaviour
             {
                 mount = null;
             }
-            print("sc");
             animator.SetBool("Jumping", false);
             moveVec.y = 0;
             if (Input.GetButton("Jump"))
@@ -92,8 +93,9 @@ public class Player : MonoBehaviour
         {
             Ride();
         }
-        animator.SetFloat("Speed", rigidbody.velocity.sqrMagnitude / moveSpeed);
-        var zm = Mathf.Max( moveSpeed - rigidbody.velocity.sqrMagnitude, 0);
+        print(rigidbody.velocity.sqrMagnitude);
+        animator.SetFloat("Speed", 1.7f*rigidbody.velocity.sqrMagnitude / moveSpeed);
+        var zm = Mathf.Max( moveAcc*(moveSpeed - rigidbody.velocity.sqrMagnitude), 0);
         moveVec = transform.TransformDirection(new Vector3(0, 0, ms*zm));
         rigidbody.AddForce(moveVec);
 
