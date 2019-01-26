@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
     private float cameraInterpolationMultipler = 0.1f;
     [SerializeField]
     private float cameraHeightInterpolationMultipler = 0.1f;
-
+    private GameObject mount;
+    private Vector3? mountLastPosition;
 
     Animator animator;
 
@@ -58,8 +59,22 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotationInterpolationMultipler);
             
         }
-        if (Physics.SphereCast(new Ray(transform.TransformPoint(collider.center), Vector3.down), collider.radius * transform.localScale.x, 1.5f * transform.localScale.y))
+        RaycastHit hit;
+        if (Physics.SphereCast(new Ray(transform.TransformPoint(collider.center), Vector3.down), collider.radius * transform.localScale.x, out hit, 1.5f * transform.localScale.y))
         {
+            if (hit.collider.CompareTag("Rideable"))
+            {
+                GameObject hitObject = hit.collider.gameObject;
+                if (hitObject != mount)
+                {
+                    mount = hit.collider.gameObject;
+                    mountLastPosition = null;
+                }
+            }
+            else
+            {
+                mount = null;
+            }
             print("sc");
             animator.SetBool("Jumping", false);
             moveVec.y = 0;
@@ -69,11 +84,31 @@ public class Player : MonoBehaviour
                 rigidbody.AddForce(Vector3.up * jumpSpeed);
             }
         }
+        else
+        {
+            mount = null;
+        }
+        if (mount != null)
+        {
+            Ride();
+        }
         animator.SetFloat("Speed", rigidbody.velocity.sqrMagnitude / moveSpeed);
         var zm = Mathf.Max( moveSpeed - rigidbody.velocity.sqrMagnitude, 0);
         moveVec = transform.TransformDirection(new Vector3(0, 0, ms*zm));
         rigidbody.AddForce(moveVec);
 
+    }
+
+    void Ride()
+    {
+        Vector3 newPos = mount.transform.position;
+        newPos.y = transform.position.y;
+        if (mountLastPosition != null)
+        {
+            print("mount moved to " + (mount.transform.position - (Vector3)mountLastPosition));
+            transform.position += mount.transform.position - (Vector3)mountLastPosition;
+        }
+        mountLastPosition = mount.transform.position;
     }
 
     // Update is called once per frame
