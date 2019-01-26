@@ -93,6 +93,9 @@ ModelImporter:
     2100030: Radio_panel_dark
     2100032: Radio_panel
     2100034: Window
+    2100036: Glass
+    2100038: Plate_Edge
+    2100040: Exit
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
