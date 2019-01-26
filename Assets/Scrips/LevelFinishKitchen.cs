@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelFinishKitchen : MonoBehaviour
 {
-
-    public Animator animator;
-
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Ended"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("TestScene");
         }

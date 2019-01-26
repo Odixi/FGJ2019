@@ -37,7 +37,6 @@ public class TimeController : MonoBehaviour
     {
         CurrentTime = animators[0].GetCurrentAnimatorStateInfo(0).normalizedTime;
         var curSpeed = animators[0].GetCurrentAnimatorStateInfo(0).speedMultiplier;
-        print(curSpeed);
 
         if ((CurrentTime >= MaxTime && Speed > 0) || (CurrentTime <= MinTime && Speed < 0))
         {
