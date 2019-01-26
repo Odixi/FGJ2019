@@ -97,7 +97,5 @@ public class Player : MonoBehaviour
 
         camera.transform.LookAt(transform.position + Vector3.up * 0.1f);
 
-
-
     }
 }
