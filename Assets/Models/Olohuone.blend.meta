@@ -20,6 +20,9 @@ ModelImporter:
     100028: TKPoyta
     100030: Tuoli
     100032: Vasemovi
+    100034: Wifi
+    100036: Vasemovi_001
+    100038: oikeaOvi_001
     400000: Fan
     400002: HH
     400004: Hiiri
@@ -37,6 +40,9 @@ ModelImporter:
     400028: TKPoyta
     400030: Tuoli
     400032: Vasemovi
+    400034: Wifi
+    400036: Vasemovi_001
+    400038: oikeaOvi_001
     2100000: unnamed
     2100002: Telkkari
     2100004: Lamppu
@@ -64,6 +70,9 @@ ModelImporter:
     2300026: TKPoyta
     2300028: Tuoli
     2300030: Vasemovi
+    2300032: Wifi
+    2300034: Vasemovi_001
+    2300036: oikeaOvi_001
     3300000: Fan
     3300002: HH
     3300004: Hiiri
@@ -80,6 +89,9 @@ ModelImporter:
     3300026: TKPoyta
     3300028: Tuoli
     3300030: Vasemovi
+    3300032: Wifi
+    3300034: Vasemovi_001
+    3300036: oikeaOvi_001
     4300000: HH
     4300002: Imuri
     4300004: Kaukos
@@ -96,8 +108,12 @@ ModelImporter:
     4300026: Poyta
     4300028: Sohva
     4300030: Huone
+    4300032: Wifi
+    4300034: Vasemovi_001
+    4300036: oikeaOvi_001
     7400000: Default Take
     9500000: //RootNode
+    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -118,14 +134,42 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -135,14 +179,14 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
-    weldVertices: 1
+    weldVertices: 0
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -175,7 +219,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
