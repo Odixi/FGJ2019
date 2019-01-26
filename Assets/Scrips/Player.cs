@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private Camera camera;
     private Rigidbody rigidbody;
-    private CharacterController cc;
+    private CapsuleCollider collider;
     [SerializeField]
     private float cameraTargetDist;
     [SerializeField]
@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     private float cameraTragetHeight;
     [SerializeField]
     private float cameraSens;
-    [SerializeField]
-    private float gravity = 9.81f;
     [SerializeField]
     private float jumpSpeed;
     [SerializeField]
@@ -40,7 +38,7 @@ public class Player : MonoBehaviour
     {
         camera = Camera.main;
         rigidbody = GetComponent<Rigidbody>();
-        cc = GetComponent<CharacterController>();
+        collider = GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         animator = GetComponentInChildren<Animator>();
@@ -50,31 +48,34 @@ public class Player : MonoBehaviour
     {
         var hor = Input.GetAxis("Horizontal");
         var ver = Input.GetAxis("Vertical");
-        var ms = Mathf.Clamp(Mathf.Abs(hor) + Mathf.Abs(ver), 0, moveSpeed);
+        var ms = Mathf.Clamp(Mathf.Abs(hor) + Mathf.Abs(ver), 0, 1);
         moveVec.x = 0;
         moveVec.z = 0;
-        moveVec.y -= gravity * Time.fixedDeltaTime;
         if (hor != 0 || ver != 0)
         {
             var dir = camera.transform.TransformDirection(new Vector3(hor, 0, ver));
             dir.y = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotationInterpolationMultipler);
-            moveVec = transform.TransformDirection(new Vector3(0, moveVec.y, ms));
+            
         }
-        if (cc.isGrounded)
+        if (Physics.SphereCast(new Ray(transform.TransformPoint(collider.center), Vector3.down), collider.radius * transform.localScale.x, 1.5f * transform.localScale.y))
         {
+            print("sc");
             animator.SetBool("Jumping", false);
             moveVec.y = 0;
             if (Input.GetButton("Jump"))
             {
                 animator.SetBool("Jumping", true);
-                moveVec.y = jumpSpeed;
+                rigidbody.AddForce(Vector3.up * jumpSpeed);
             }
         }
-        animator.SetFloat("Speed", ms / moveSpeed);
-        cc.Move(moveVec);
+        animator.SetFloat("Speed", rigidbody.velocity.sqrMagnitude / moveSpeed);
+        var zm = Mathf.Max( moveSpeed - rigidbody.velocity.sqrMagnitude, 0);
+        moveVec = transform.TransformDirection(new Vector3(0, 0, ms*zm));
+        rigidbody.AddForce(moveVec);
 
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -98,4 +99,31 @@ public class Player : MonoBehaviour
         camera.transform.LookAt(transform.position + Vector3.up * 0.1f);
 
     }
+
+
+    //private GameObject lastCollided;
+    //private Vector3 lastCollidedOldPosition;
+    //void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    if (hit.gameObject == null)
+    //    {
+    //        return;
+    //    }
+
+    //    //if ((cc.collisionFlags & CollisionFlags.Below) != 0)
+    //    //{
+    //        if (lastCollided == hit.gameObject)
+    //        {
+    //            transform.position += (hit.gameObject.transform.position - lastCollidedOldPosition);
+    //        }
+    //        else
+    //        {
+    //            lastCollided = hit.gameObject;
+    //        }
+    //        lastCollidedOldPosition = lastCollided.transform.position;
+    //    //}
+    //}
+
+
+
 }
