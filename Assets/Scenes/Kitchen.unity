@@ -175,6 +175,8 @@ MonoBehaviour:
   musicTimeSource: {fileID: 1591071765}
   volume: 0.4
   fadeStep: 0.01
+  timeTravelSoundObject: {fileID: 7040193441692738929, guid: 4a3e5f5726c1c5f4e85ff0abd243e04e,
+    type: 3}
 --- !u!1 &171815406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100028, guid: 60263be2c2e0ce24081346ab884e37b0,

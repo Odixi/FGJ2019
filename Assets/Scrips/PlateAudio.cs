@@ -17,7 +17,6 @@ public class PlateAudio : MonoBehaviour
     }
     void Update()
     {
-        print(timeController.CurrentTime);
         if (animator.GetCurrentAnimatorStateInfo(0).speedMultiplier > 0)
         {
             if (!playingSound)

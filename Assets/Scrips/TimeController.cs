@@ -30,6 +30,8 @@ public class TimeController : MonoBehaviour
     public float volume = 0.4f;
     public float fadeStep = 0.01f;
 
+    public GameObject timeTravelSoundObject;
+
     private void Start()
     {
         if (Instance != null)
@@ -110,7 +112,6 @@ public class TimeController : MonoBehaviour
             keys[0] = CurrentTime;
             keySliders[0].gameObject.SetActive(true);
             keySliders[0].value = CurrentTime;
-
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && !Input.GetKey(KeyCode.LeftControl) && keys[0] >= 0)
         {
@@ -208,6 +209,12 @@ public class TimeController : MonoBehaviour
             //a.SetFloat("time", time);
             a.Play(0, 0, time);
         }
+        PlayTimetravelSound();
     }
 
+    void PlayTimetravelSound()
+    {
+        GameObject soundObject = Instantiate(timeTravelSoundObject);
+        Destroy(soundObject, 2F);
+    }
 }

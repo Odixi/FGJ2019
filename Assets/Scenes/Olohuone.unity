@@ -423,6 +423,8 @@ MonoBehaviour:
   musicTimeSource: {fileID: 411832909}
   volume: 0.4
   fadeStep: 0.01
+  timeTravelSoundObject: {fileID: 7040193441692738929, guid: 4a3e5f5726c1c5f4e85ff0abd243e04e,
+    type: 3}
 --- !u!4 &1068166588
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,20 +1020,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5348876048664616318, guid: 422ade6aeb4c9404095c6c7336e157bf,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 968246835773229640, guid: 422ade6aeb4c9404095c6c7336e157bf,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5189696194113325555, guid: 422ade6aeb4c9404095c6c7336e157bf,
         type: 3}
@@ -1061,6 +1053,20 @@ PrefabInstance:
     - target: {fileID: 4893169022719888735, guid: 422ade6aeb4c9404095c6c7336e157bf,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873094127, guid: 422ade6aeb4c9404095c6c7336e157bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 968246835773229640, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048664616318, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 181822822936092581, guid: 422ade6aeb4c9404095c6c7336e157bf,
