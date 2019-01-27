@@ -166,6 +166,10 @@ MonoBehaviour:
   - {fileID: 150263033}
   timeSlider: {fileID: 1347369056}
   timeValueText: {fileID: 1573996331}
+  musicAmbiendSource: {fileID: 1234607789}
+  musicTimeSource: {fileID: 1591071765}
+  volume: 0.4
+  fadeStep: 0.01
 --- !u!1 &171815406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100028, guid: 60263be2c2e0ce24081346ab884e37b0,
@@ -316,6 +320,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348876048708947625, guid: 422ade6aeb4c9404095c6c7336e157bf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 136.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 422ade6aeb4c9404095c6c7336e157bf, type: 3}
@@ -581,6 +610,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rideable
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 60263be2c2e0ce24081346ab884e37b0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b24ba9e1131364c47a75e61255c9d897, type: 2}
     - target: {fileID: 400022, guid: 60263be2c2e0ce24081346ab884e37b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -625,10 +658,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 60263be2c2e0ce24081346ab884e37b0, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b24ba9e1131364c47a75e61255c9d897, type: 2}
     - target: {fileID: 400054, guid: 60263be2c2e0ce24081346ab884e37b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.411
@@ -711,6 +740,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300020, guid: 60263be2c2e0ce24081346ab884e37b0, type: 3}
+--- !u!82 &1234607789 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1234607789, guid: b8e73909a0079504887f07ef80b80866,
+    type: 3}
+  m_PrefabInstance: {fileID: 881549197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1240202038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100046, guid: 60263be2c2e0ce24081346ab884e37b0,
@@ -929,6 +964,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1591071765 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1334877316, guid: b8e73909a0079504887f07ef80b80866,
+    type: 3}
+  m_PrefabInstance: {fileID: 881549197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1621158710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100016, guid: 60263be2c2e0ce24081346ab884e37b0,
