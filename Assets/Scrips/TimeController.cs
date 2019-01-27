@@ -19,6 +19,7 @@ public class TimeController : MonoBehaviour
     public List<Animator> animators;
 
     public Slider timeSlider;
+    public List<Slider> keySliders;
     public Text timeValueText;
 
     public AudioSource musicAmbiendSource;
@@ -38,6 +39,10 @@ public class TimeController : MonoBehaviour
             return;
         }
         Instance = this;
+        foreach(var ks in keySliders)
+        {
+            ks.gameObject.SetActive(false);
+        }
         keys = new List<float> {-1,-1,-1,-1};
         audioSources = FindObjectsOfType<AudioSource>();
         SetSoundSpeeds();
@@ -103,6 +108,9 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && Input.GetKey(KeyCode.LeftControl))
         {
             keys[0] = CurrentTime;
+            keySliders[0].gameObject.SetActive(true);
+            keySliders[0].value = CurrentTime;
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && !Input.GetKey(KeyCode.LeftControl) && keys[0] >= 0)
         {
@@ -112,6 +120,8 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftControl))
         {
             keys[1] = CurrentTime;
+            keySliders[1].gameObject.SetActive(true);
+            keySliders[1].value = CurrentTime;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && !Input.GetKey(KeyCode.LeftControl) && keys[1] >= 0)
         {
@@ -121,6 +131,8 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftControl))
         {
             keys[2] = CurrentTime;
+            keySliders[2].gameObject.SetActive(true);
+            keySliders[2].value = CurrentTime;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && !Input.GetKey(KeyCode.LeftControl) && keys[2] >= 0)
         {
@@ -130,6 +142,8 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4) && Input.GetKey(KeyCode.LeftControl))
         {
             keys[3] = CurrentTime;
+            keySliders[3].gameObject.SetActive(true);
+            keySliders[3].value = CurrentTime;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && !Input.GetKey(KeyCode.LeftControl) && keys[3] >= 0)
         {
@@ -185,6 +199,10 @@ public class TimeController : MonoBehaviour
     // time [0,1]
     public void SetTime(float time)
     {
+        if (time > 1 || time < 0)
+        {
+            return;
+        }
         foreach(var a in animators)
         {
             //a.SetFloat("time", time);
