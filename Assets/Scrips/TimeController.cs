@@ -21,6 +21,14 @@ public class TimeController : MonoBehaviour
     public Slider timeSlider;
     public Text timeValueText;
 
+    public AudioSource musicAmbiendSource;
+    public AudioSource musicTimeSource;
+
+    private AudioSource[] audioSources;
+
+    public float volume = 0.4f;
+    public float fadeStep = 0.01f;
+
     private void Start()
     {
         if (Instance != null)
@@ -31,6 +39,8 @@ public class TimeController : MonoBehaviour
         }
         Instance = this;
         keys = new List<float> {-1,-1,-1,-1};
+        audioSources = FindObjectsOfType<AudioSource>();
+        SetSoundSpeeds();
     }
 
     private void Update()
@@ -46,6 +56,7 @@ public class TimeController : MonoBehaviour
                 Speed = 0;
                 a.SetFloat("speed", 0);
             }
+            SetSoundSpeeds();
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0.01f)
@@ -56,6 +67,8 @@ public class TimeController : MonoBehaviour
             {
                 var s = curSpeed > 0 ? 1 : -1;
                 TimeController.Instance.Play(s * PbSpeed);
+                Speed = s * PbSpeed;
+                SetSoundSpeeds();
             }
 
         }
@@ -68,6 +81,8 @@ public class TimeController : MonoBehaviour
             {
                 var s = curSpeed > 0 ? 1 : -1;
                 TimeController.Instance.Play(s * PbSpeed);
+                Speed = s * PbSpeed;
+                SetSoundSpeeds();
             }
         }
 
@@ -76,11 +91,13 @@ public class TimeController : MonoBehaviour
         {
             var ts = TimeController.Instance.Speed > 0 ? 0 :PbSpeed;
             TimeController.Instance.Play(ts);
+            SetSoundSpeeds();
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             var ts = TimeController.Instance.Speed < 0 ? 0 : -PbSpeed;
             TimeController.Instance.Play(ts);
+            SetSoundSpeeds();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && Input.GetKey(KeyCode.LeftControl))
@@ -120,6 +137,35 @@ public class TimeController : MonoBehaviour
         }
 
         timeSlider.value = CurrentTime;
+    }
+
+    private void SetSoundSpeeds()
+    {
+        foreach(var a in audioSources)
+        {
+            a.pitch = Speed;
+        }
+        if (Speed == 0)
+        {
+            StartCoroutine(fadeMusic(musicAmbiendSource, musicTimeSource));
+            musicAmbiendSource.pitch = 1;
+        }
+        else
+        {
+            StartCoroutine(fadeMusic(musicTimeSource, musicAmbiendSource));
+        }
+    }
+
+    private IEnumerator fadeMusic(AudioSource fadeIn, AudioSource fadeOut)
+    {
+        while (fadeIn.volume < volume || fadeOut.volume > 0)
+        {
+            fadeIn.volume += fadeStep;
+            fadeOut.volume -= fadeStep;
+            yield return new WaitForEndOfFrame();
+        }
+
+
     }
 
     // can be negative

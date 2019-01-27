@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &47782183 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1234607789, guid: b8e73909a0079504887f07ef80b80866,
+    type: 3}
+  m_PrefabInstance: {fileID: 1123652361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &74682579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +227,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300028, guid: 3f4c9416422c5b542ae748d2a772a4b4, type: 3}
+--- !u!82 &411832909 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1334877316, guid: b8e73909a0079504887f07ef80b80866,
+    type: 3}
+  m_PrefabInstance: {fileID: 1123652361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &433898021 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 3f4c9416422c5b542ae748d2a772a4b4,
@@ -402,6 +414,10 @@ MonoBehaviour:
   - {fileID: 433898021}
   timeSlider: {fileID: 1999261079}
   timeValueText: {fileID: 1999261078}
+  musicAmbiendSource: {fileID: 47782183}
+  musicTimeSource: {fileID: 411832909}
+  volume: 0.4
+  fadeStep: 0.01
 --- !u!4 &1068166588
 Transform:
   m_ObjectHideFlags: 0
@@ -613,6 +629,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rideable
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3f4c9416422c5b542ae748d2a772a4b4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1f8d1f5c97455d64bad8816c1c70caea, type: 2}
     - target: {fileID: 400018, guid: 3f4c9416422c5b542ae748d2a772a4b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -657,10 +677,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 3f4c9416422c5b542ae748d2a772a4b4, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1f8d1f5c97455d64bad8816c1c70caea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c9416422c5b542ae748d2a772a4b4, type: 3}
 --- !u!1 &1411376932 stripped
