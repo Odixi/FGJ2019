@@ -113,7 +113,7 @@ public class TimeController : MonoBehaviour
             keySliders[0].gameObject.SetActive(true);
             keySliders[0].value = CurrentTime;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !Input.GetKey(KeyCode.LeftControl) && keys[0] >= 0)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !Input.GetKey(KeyCode.LeftControl) && keys[0] >= 0)
         {
             SetTime(keys[0]);
         }
